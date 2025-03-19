@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VibeCircle.Pages.OnboardingPage"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="{StaticResource Primary}">
+    <Grid RowDefinitions="*, Auto, *, Auto">
+        <Grid Grid.Row="1"
+              RowDefinitions="Auto, Auto, Auto"
+              RowSpacing="20">
+            <Image  Grid.Row="0"
+                    Source="socialmedia.png"
+                    HeightRequest="190"
+                    WidthRequest="180"
+                    />
+            <Label Grid.Row="1"
+                   FontAttributes="Bold"
+                   FontSize="25"
+                   HorizontalOptions="Center"
+                   Text="Hello There !!"
+                   TextColor="White"/>
+            <VerticalStackLayout Grid.Row="2" Spacing="10">
+                <Label FontSize="30"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       Text="Welcome to VibeCircle"
+                       TextColor="White"/>
+                
+            </VerticalStackLayout>
+        </Grid>
+        
+    </Grid>
+</ContentPage>

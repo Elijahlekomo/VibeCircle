@@ -4,12 +4,20 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:VibeCircle"
-    Shell.FlyoutBehavior="Flyout"
+    xmlns:pages="clr-namespace:VibeCircle.Pages"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.ForegroundColor="White"
+    Shell.NavBarHasShadow="True"
     Title="VibeCircle">
 
     <ShellContent
+                    Title="Onboarding Page"
+                    ContentTemplate="{DataTemplate pages:OnboardingPage}"
+                    Route="OnboardingPage" />
+
+    <ShellContent
         Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        ContentTemplate="{DataTemplate pages:HomePage}"
+        Route="HomePage" />
 
 </Shell>

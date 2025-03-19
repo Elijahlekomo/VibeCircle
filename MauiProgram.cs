@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using CommunityToolkit.Maui;
 
 namespace VibeCircle
 {
@@ -11,9 +12,12 @@ namespace VibeCircle
                 .UseMauiApp<App>()
                 .ConfigureFonts(fonts =>
                 {
-                    fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-                    fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-                });
+                    //fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+                    //fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+
+                    fonts.AddFont("BigShoulders-Regular.ttf", "BigShouldersRegular");
+                    fonts.AddFont("BigShoulders-Semibold.ttf", "BigShouldersSemibold");
+                }).UseMauiCommunityToolkit();
 
 #if DEBUG
     		builder.Logging.AddDebug();

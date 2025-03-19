@@ -1,0 +1,5 @@
+============== Colour Scheme ==========
+Baby Blue -#bfd7ed
+Blue Grotto - #60a3d9
+Royal Blue  - #0074b7
+Navy Blue - #003b73
