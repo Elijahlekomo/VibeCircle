@@ -17,7 +17,7 @@
                    FontAttributes="Bold"
                    FontSize="25"
                    HorizontalOptions="Center"
-                   Text="Hello There !!"
+                   Text="Hi There !!"
                    TextColor="White"/>
             <VerticalStackLayout Grid.Row="2" Spacing="10">
                 <Label FontSize="30"
@@ -28,6 +28,15 @@
                 
             </VerticalStackLayout>
         </Grid>
-        
+        <StackLayout Grid.Row="3"
+                     Padding="20">
+            <Button 
+                BackgroundColor="White"
+                CornerRadius="22"
+                Style="{StaticResource rounded}"
+                Text="Get Started"
+                TextColor="{StaticResource Primary}"
+                Clicked="Button_Clicked"/>
+        </StackLayout>
     </Grid>
 </ContentPage>
