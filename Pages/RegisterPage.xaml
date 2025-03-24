@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VibeCircle.Pages.RegisterPage"
+             xmlns:controls="clr-namespace:VibeCircle.Controls"
+             Title="Register"
+             Padding="20">
+    <ScrollView>
+        <Grid RowDefinitions="Auto, Auto, Auto"
+                RowSpacing="20"
+                VerticalOptions="Center">
+            <Image Grid.Row="1"
+                   HeightRequest="128"
+                   Source="socialmedia"/>
+
+            <Label Grid.Row="1"
+                    FontAttributes="Bold"
+                   FontSize="25"
+                   HorizontalOptions="Center"
+                    Text="Login"/>
+            <VerticalStackLayout Grid.Row="2" Spacing="2">
+
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                    <Border BackgroundColor="LightBlue"
+                            HeightRequest="80"
+                            WidthRequest="80"
+                            StrokeShape="RoundRectangle 40">
+                        <Image Aspect="Center"
+                               HeightRequest="80"
+                               WidthRequest="80"
+                               Source="user.png"/>
+                    </Border>
+                    <Button Text="Choose Photo" VerticalOptions="Center"></Button>
+                </HorizontalStackLayout>
+                <Label Text="Name" Style="{StaticResource formlabel}"/>
+
+                <controls:NoBorderEntry Placeholder="Enter name"/>
+                <controls:Spacer/>
+
+                <Label Text="Email" Style="{StaticResource formlabel}"/>
+
+                <controls:NoBorderEntry Placeholder="Enter Email"/>
+                <controls:Spacer/>
+
+                <Label Text="Password" Style="{StaticResource formlabel}"/>
+
+                <controls:NoBorderEntry IsPassword="True" Placeholder="Enter Password"/>
+
+                <controls:Spacer/>
+
+                <Button Style="{StaticResource rounded}" Text="Register"/>
+                <Grid ColumnDefinitions="*, Auto, *"
+                    ColumnSpacing="5">
+                    <BoxView Grid.Column="0"
+                  Style="{StaticResource fadedLine}"/>
+                    <Label Grid.Column="1" HorizontalOptions="Center" Text="Exiting User?"/>
+                    <BoxView Grid.Column="2"
+                  Style="{StaticResource fadedLine}"/>
+
+                </Grid>
+                <controls:Spacer/>
+                <Button Style="{StaticResource rounded}" 
+                    Text="Login"
+                        Clicked="Button_Clicked"
+                    />
+
+            </VerticalStackLayout>
+        </Grid>
+    </ScrollView>
+</ContentPage>

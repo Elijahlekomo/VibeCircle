@@ -2,6 +2,7 @@
 <Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:VibeCircle"
+             xmlns:controls="clr-namespace:VibeCircle.Controls"
              x:Class="VibeCircle.App">
     <Application.Resources>
         <ResourceDictionary>
@@ -22,6 +23,10 @@
                         <Setter Property="HeightRequest" Value="1"/>
                         <Setter Property="Color" Value="{StaticResource Primary}"/>
                         <Setter Property="Opacity" Value="0.2"/>
+                    </Style>
+
+                    <Style TargetType="controls:NoBorderEntry">
+                        <Setter Property="BackgroundColor" Value="LightBlue"/>
                     </Style>
                     
                 </ResourceDictionary>
