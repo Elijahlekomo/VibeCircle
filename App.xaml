@@ -20,8 +20,8 @@
                     </Style>
                     
                     <Style x:Key="fadedLine" TargetType="BoxView">
-                        <Setter Property="HeightRequest" Value="1"/>
-                        <Setter Property="Color" Value="{StaticResource Primary}"/>
+                        <Setter Property="HeightRequest" Value="0.5"/>
+                        <Setter Property="BackgroundColor" Value="{StaticResource Primary}"/>
                         <Setter Property="Opacity" Value="0.2"/>
                     </Style>
 

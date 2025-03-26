@@ -6,7 +6,7 @@
     xmlns:local="clr-namespace:VibeCircle"
     xmlns:pages="clr-namespace:VibeCircle.Pages"
     Shell.FlyoutBehavior="Disabled"
-    Shell.ForegroundColor="{StaticResource Primary}"
+    Shell.BackgroundColor="{StaticResource Primary}"
     Shell.NavBarHasShadow="True"
     Title="VibeCircle">
 

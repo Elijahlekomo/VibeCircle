@@ -3,7 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Class="VibeCircle.Pages.HomePage"
-             Title="HomePage">
+             xmlns:controls="clr-namespace:VibeCircle.Controls"
+             Title="HomePage"
+             BackgroundColor="{StaticResource Gray100}">
+
+    <ContentPage.Resources>
+        <x:Double x:Key="WhiteImageSize">20</x:Double>
+    </ContentPage.Resources>
     <Shell.TitleView>
         <Grid ColumnDefinitions="Auto, *, Auto">
             <Label Grid.Column="0"
@@ -15,20 +21,440 @@
             <Grid Grid.Column="2" 
                   ColumnDefinitions="*, *, *"
                   Margin="0, 0, 15, 0"
+                  ColumnSpacing="20"
                   VerticalOptions="Center">
-                <Image Grid.Column="0"
-                       HeightRequest="20"
-                       WidthRequest="20"
-                       Source="plus"/>
-                <Image Grid.Column="0"
-                       HeightRequest="20"
-                       WidthRequest="20"
-                       Source="bell"/>
-                <Image Grid.Column="0"
-                       HeightRequest="20"
-                       WidthRequest="20"
-                       Source="user"/>
+
+                <controls:WhiteImage  Grid.Column="0"
+                                      HeightRequest="{StaticResource WhiteImageSize}"
+                                      WidthRequest="{StaticResource WhiteImageSize}"
+                                      Source="plus"/>
+                <Grid Grid.Column="1">
+                    <controls:WhiteImage  
+                                      HeightRequest="{StaticResource WhiteImageSize}"
+                                      WidthRequest="{StaticResource WhiteImageSize}"
+                                      Source="bell"/>
+                    <Ellipse Fill="Black"
+                             WidthRequest="10"
+                             HeightRequest="10"
+                             VerticalOptions="Start"
+                             HorizontalOptions="End"/>
+                </Grid>
+                <controls:WhiteImage  Grid.Column="2"
+                                      HeightRequest="{StaticResource WhiteImageSize}"
+                                      WidthRequest="{StaticResource WhiteImageSize}"
+                                      Source="user"/>
             </Grid>
         </Grid>
     </Shell.TitleView>
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="10">
+            <Border Padding="0,8" 
+                    BackgroundColor="White"
+                    StrokeThickness="0">
+                <Grid RowDefinitions="Auto, 250, Auto, Auto" RowSpacing="8">
+                    <Grid ColumnDefinitions="40, *, *" 
+                          ColumnSpacing="5"
+                          Padding="8,0">
+                        <Border Grid.Column="0"
+                            HeightRequest="40"
+                            StrokeShape="RoundRectangle 20"
+                            BackgroundColor="LightBlue"
+                            WidthRequest="40">
+                            <Image Aspect="AspectFit"
+                               HeightRequest="30"
+                               HorizontalOptions="Center"
+                               Source="user"
+                               VerticalOptions="Center"
+                               WidthRequest="30"/>
+                        </Border>
+                        <Grid Grid.Column="1" 
+                          ColumnDefinitions="Auto, Auto, Auto"
+                          ColumnSpacing="5"
+                          VerticalOptions="Center">
+                            <Label Grid.Column="0" 
+                               Text="Elijah Lekomo"
+                               FontAttributes="Bold"/>
+
+                            <Label Grid.Column="1" 
+                               FontSize="14"
+                               Text="."
+                               VerticalOptions="Center"
+                               Margin="0, -7, 0, 0"
+                               FontAttributes="Bold"/>
+
+                            <Label Grid.Column="2"
+                               FontSize="12"
+                               Text="26 Mar 2025"
+                               VerticalOptions="Center"/>
+                        </Grid>
+                    </Grid>
+
+                    <Border Grid.Row="1"
+                        BackgroundColor="LightSalmon"
+                        HeightRequest="250"
+                        StrokeThickness="0">
+                        <Image Aspect="Center"
+                           HeightRequest="250"
+                           Source="africanculture"/>
+                    </Border>
+
+                    <Label Grid.Row="2"
+                       FontSize="15"
+                       Text="Post Comment"
+                           Padding="8,0"
+                       TextColor="{StaticResource Gray900}"/>
+
+                    <VerticalStackLayout Grid.Row="3" Spacing="10">
+                        <BoxView Style="{StaticResource fadedLine}"/>
+                        <FlexLayout JustifyContent="SpaceAround">
+                            <HorizontalStackLayout Spacing="2">
+                                <controls:PrimaryColorImage
+                           HeightRequest="20"
+                           Source="heartregular"
+                           VerticalOptions="Center"
+                           WidthRequest="20"/>
+                                <Label FontSize="12"
+                               Text="Like"
+                               VerticalOptions="Center"/>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout Spacing="2">
+                                <controls:PrimaryColorImage
+                           HeightRequest="20"
+                           Source="comment"
+                           VerticalOptions="Center"
+                           WidthRequest="20"/>
+                                <Label FontSize="12"
+                               Text="comment"
+                               VerticalOptions="Center"/>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout Spacing="2">
+                                <controls:PrimaryColorImage
+                           HeightRequest="20"
+                           Source="save"
+                           VerticalOptions="Center"
+                           WidthRequest="20"/>
+                                <Label FontSize="12"
+                               Text="save"
+                               VerticalOptions="Center"/>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout Spacing="2">
+                                <controls:PrimaryColorImage
+                           HeightRequest="20"
+                           Source="share"
+                           VerticalOptions="Center"
+                           WidthRequest="20"/>
+                                <Label FontSize="12"
+                               Text="share"
+                               VerticalOptions="Center"/>
+                            </HorizontalStackLayout>
+                        </FlexLayout>
+                    </VerticalStackLayout>
+
+                </Grid>
+            </Border>
+
+            <Border Padding="0,8" 
+          BackgroundColor="White"
+          StrokeThickness="0">
+                <Grid RowDefinitions="Auto, 250, Auto, Auto" RowSpacing="8">
+                    <Grid ColumnDefinitions="40, *, *" 
+                ColumnSpacing="5"
+                Padding="8,0">
+                        <Border Grid.Column="0"
+                  HeightRequest="40"
+                  StrokeShape="RoundRectangle 20"
+                  BackgroundColor="LightBlue"
+                  WidthRequest="40">
+                            <Image Aspect="AspectFit"
+                     HeightRequest="30"
+                     HorizontalOptions="Center"
+                     Source="user"
+                     VerticalOptions="Center"
+                     WidthRequest="30"/>
+                        </Border>
+                        <Grid Grid.Column="1" 
+                ColumnDefinitions="Auto, Auto, Auto"
+                ColumnSpacing="5"
+                VerticalOptions="Center">
+                            <Label Grid.Column="0" 
+                     Text="Elijah Lekomo"
+                     FontAttributes="Bold"/>
+
+                            <Label Grid.Column="1" 
+                     FontSize="14"
+                     Text="."
+                     VerticalOptions="Center"
+                     Margin="0, -7, 0, 0"
+                     FontAttributes="Bold"/>
+
+                            <Label Grid.Column="2"
+                     FontSize="12"
+                     Text="26 Mar 2025"
+                     VerticalOptions="Center"/>
+                        </Grid>
+                    </Grid>
+
+                    <Border Grid.Row="1"
+              BackgroundColor="LightSalmon"
+              HeightRequest="250"
+              StrokeThickness="0">
+                        <Image Aspect="Center"
+                 HeightRequest="250"
+                 Source="music"/>
+                    </Border>
+
+                    <Label Grid.Row="2"
+             FontSize="15"
+             Text="Post Comment"
+                 Padding="8,0"
+             TextColor="{StaticResource Gray900}"/>
+
+                    <VerticalStackLayout Grid.Row="3" Spacing="10">
+                        <BoxView Style="{StaticResource fadedLine}"/>
+                        <FlexLayout JustifyContent="SpaceAround">
+                            <HorizontalStackLayout Spacing="2">
+                                <controls:PrimaryColorImage
+                 HeightRequest="20"
+                 Source="heart"
+                 VerticalOptions="Center"
+                 WidthRequest="20"/>
+                                <Label FontSize="12"
+                     Text="Like"
+                     VerticalOptions="Center"/>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout Spacing="2">
+                                <controls:PrimaryColorImage
+                 HeightRequest="20"
+                 Source="comment"
+                 VerticalOptions="Center"
+                 WidthRequest="20"/>
+                                <Label FontSize="12"
+                     Text="comment"
+                     VerticalOptions="Center"/>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout Spacing="2">
+                                <controls:PrimaryColorImage
+                 HeightRequest="20"
+                 Source="save"
+                 VerticalOptions="Center"
+                 WidthRequest="20"/>
+                                <Label FontSize="12"
+                     Text="save"
+                     VerticalOptions="Center"/>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout Spacing="2">
+                                <controls:PrimaryColorImage
+                 HeightRequest="20"
+                 Source="share"
+                 VerticalOptions="Center"
+                 WidthRequest="20"/>
+                                <Label FontSize="12"
+                     Text="share"
+                     VerticalOptions="Center"/>
+                            </HorizontalStackLayout>
+                        </FlexLayout>
+                    </VerticalStackLayout>
+
+                </Grid>
+            </Border>
+
+            <Border Padding="0,8" 
+          BackgroundColor="White"
+          StrokeThickness="0">
+                <Grid RowDefinitions="Auto, Auto, Auto" RowSpacing="8">
+                    <Grid ColumnDefinitions="40, *, *" 
+                ColumnSpacing="5"
+                Padding="8,0">
+                        <Border Grid.Column="0"
+                  HeightRequest="40"
+                  StrokeShape="RoundRectangle 20"
+                  BackgroundColor="LightBlue"
+                  WidthRequest="40">
+                            <Image Aspect="AspectFit"
+                     HeightRequest="30"
+                     HorizontalOptions="Center"
+                     Source="user"
+                     VerticalOptions="Center"
+                     WidthRequest="30"/>
+                        </Border>
+                        <Grid Grid.Column="1" 
+                ColumnDefinitions="Auto, Auto, Auto"
+                ColumnSpacing="5"
+                VerticalOptions="Center">
+                            <Label Grid.Column="0" 
+                     Text="Elijah Lekomo"
+                     FontAttributes="Bold"/>
+
+                            <Label Grid.Column="1" 
+                     FontSize="14"
+                     Text="."
+                     VerticalOptions="Center"
+                     Margin="0, -7, 0, 0"
+                     FontAttributes="Bold"/>
+
+                            <Label Grid.Column="2"
+                     FontSize="12"
+                     Text="26 Mar 2025"
+                     VerticalOptions="Center"/>
+                        </Grid>
+                    </Grid>
+                   
+                    <Label Grid.Row="1"
+             FontSize="15"
+             Text="Post Comment"
+                 Padding="8,0"
+             TextColor="{StaticResource Gray900}"/>
+
+                    <VerticalStackLayout Grid.Row="3" Spacing="10">
+                        <BoxView Style="{StaticResource fadedLine}"/>
+                        <FlexLayout JustifyContent="SpaceAround">
+                            <HorizontalStackLayout Spacing="2">
+                                <controls:PrimaryColorImage
+                 HeightRequest="20"
+                 Source="heart"
+                 VerticalOptions="Center"
+                 WidthRequest="20"/>
+                                <Label FontSize="12"
+                     Text="Like"
+                     VerticalOptions="Center"/>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout Spacing="2">
+                                <controls:PrimaryColorImage
+                 HeightRequest="20"
+                 Source="comment"
+                 VerticalOptions="Center"
+                 WidthRequest="20"/>
+                                <Label FontSize="12"
+                     Text="comment"
+                     VerticalOptions="Center"/>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout Spacing="2">
+                                <controls:PrimaryColorImage
+                 HeightRequest="20"
+                 Source="save"
+                 VerticalOptions="Center"
+                 WidthRequest="20"/>
+                                <Label FontSize="12"
+                     Text="save"
+                     VerticalOptions="Center"/>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout Spacing="2">
+                                <controls:PrimaryColorImage
+                 HeightRequest="20"
+                 Source="share"
+                 VerticalOptions="Center"
+                 WidthRequest="20"/>
+                                <Label FontSize="12"
+                     Text="share"
+                     VerticalOptions="Center"/>
+                            </HorizontalStackLayout>
+                        </FlexLayout>
+                    </VerticalStackLayout>
+
+                </Grid>
+            </Border>
+
+            <Border Padding="0,8" 
+                    BackgroundColor="White"
+                    StrokeThickness="0">
+                <Grid RowDefinitions="Auto, 250, Auto" RowSpacing="8">
+                    <Grid ColumnDefinitions="40, *, *" 
+                          ColumnSpacing="5"
+                          Padding="8,0">
+                        <Border Grid.Column="0"
+                            HeightRequest="40"
+                            StrokeShape="RoundRectangle 20"
+                            BackgroundColor="LightBlue"
+                            WidthRequest="40">
+                            <Image Aspect="AspectFit"
+                               HeightRequest="30"
+                               HorizontalOptions="Center"
+                               Source="user"
+                               VerticalOptions="Center"
+                               WidthRequest="30"/>
+                        </Border>
+                        <Grid Grid.Column="1" 
+                          ColumnDefinitions="Auto, Auto, Auto"
+                          ColumnSpacing="5"
+                          VerticalOptions="Center">
+                            <Label Grid.Column="0" 
+                               Text="Elijah Lekomo"
+                               FontAttributes="Bold"/>
+
+                            <Label Grid.Column="1" 
+                               FontSize="14"
+                               Text="."
+                               VerticalOptions="Center"
+                               Margin="0, -7, 0, 0"
+                               FontAttributes="Bold"/>
+
+                            <Label Grid.Column="2"
+                               FontSize="12"
+                               Text="26 Mar 2025"
+                               VerticalOptions="Center"/>
+                        </Grid>
+                    </Grid>
+
+                    <Border Grid.Row="1"
+                        BackgroundColor="LightSalmon"
+                        HeightRequest="250"
+                        StrokeThickness="0">
+                        <Image Aspect="Center"
+                           HeightRequest="250"
+                           Source="africanculture"/>
+                    </Border>
+
+                   
+                    <VerticalStackLayout Grid.Row="2" Spacing="10">
+                        <BoxView Style="{StaticResource fadedLine}"/>
+                        <FlexLayout JustifyContent="SpaceAround">
+                            <HorizontalStackLayout Spacing="2">
+                                <controls:PrimaryColorImage
+                           HeightRequest="20"
+                           Source="heartregular"
+                           VerticalOptions="Center"
+                           WidthRequest="20"/>
+                                <Label FontSize="12"
+                               Text="Like"
+                               VerticalOptions="Center"/>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout Spacing="2">
+                                <controls:PrimaryColorImage
+                           HeightRequest="20"
+                           Source="comment"
+                           VerticalOptions="Center"
+                           WidthRequest="20"/>
+                                <Label FontSize="12"
+                               Text="comment"
+                               VerticalOptions="Center"/>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout Spacing="2">
+                                <controls:PrimaryColorImage
+                           HeightRequest="20"
+                           Source="save"
+                           VerticalOptions="Center"
+                           WidthRequest="20"/>
+                                <Label FontSize="12"
+                               Text="save"
+                               VerticalOptions="Center"/>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout Spacing="2">
+                                <controls:PrimaryColorImage
+                           HeightRequest="20"
+                           Source="share"
+                           VerticalOptions="Center"
+                           WidthRequest="20"/>
+                                <Label FontSize="12"
+                               Text="share"
+                               VerticalOptions="Center"/>
+                            </HorizontalStackLayout>
+                        </FlexLayout>
+                    </VerticalStackLayout>
+
+                </Grid>
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

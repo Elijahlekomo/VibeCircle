@@ -1,9 +1,4 @@
 ﻿using CommunityToolkit.Maui.Behaviors;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace VibeCircle.Controls
 {
@@ -12,7 +7,7 @@ namespace VibeCircle.Controls
         public WhiteImage()
         {
             var tintColorBehavior = Behaviors.FirstOrDefault(b => b is IconTintColorBehavior);
-            if(tintColorBehavior != null)
+            if(tintColorBehavior == null)
             {
                 tintColorBehavior = new IconTintColorBehavior
                 {
@@ -22,4 +17,5 @@ namespace VibeCircle.Controls
             }
         }
     }
+    
 }

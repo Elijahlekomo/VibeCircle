@@ -13,6 +13,6 @@ public partial class LoginPage : ContentPage
     }
     private async void LoginBtn_Clicked(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync(nameof(HomePage));
+        await Shell.Current.GoToAsync($"//{nameof(HomePage)}");
     }
 }
