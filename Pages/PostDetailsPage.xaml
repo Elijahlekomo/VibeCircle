@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="VibeCircle.Pages.PostDetailsPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:VibeCircle.Controls"
+    Title="PostDetailsPage"
+    BackgroundColor="{StaticResource Gray100}"
+    Shell.PresentationMode="ModalAnimated"  >
+
+    <Grid RowDefinitions="Auto,*,Auto">
+        <Grid
+            Grid.Row="0"
+            Padding="15"
+            BackgroundColor="{StaticResource Primary}"
+            ColumnDefinitions="Auto, *, Auto, Auto"
+            ColumnSpacing="10">
+            <Border
+                Grid.Column="0"
+                BackgroundColor="White"
+                HeightRequest="30"
+                StrokeShape="RoundRectangle 8"
+                StrokeThickness="0"
+                WidthRequest="30">
+                <Image
+                    HeightRequest="24"
+                    HorizontalOptions="Center"
+                    Source="x.png"
+                    VerticalOptions="Center"
+                    WidthRequest="15" />
+                <!--<Border.Shadow>
+                    <Shadow Brush="Gray" Radius="10" />
+                </Border.Shadow>-->
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                </Border.GestureRecognizers>
+            </Border>
+
+            <Border
+                Grid.Column="2"
+                BackgroundColor="White"
+                HeightRequest="30"
+                StrokeShape="RoundRectangle 8"
+                StrokeThickness="0"
+                WidthRequest="30">
+                <Image
+                    HeightRequest="18"
+                    HorizontalOptions="Center"
+                    Source="edit.png"
+                    VerticalOptions="Center"
+                    WidthRequest="18" />
+                <!--<Border.Shadow>
+                    <Shadow Brush="Gray" Radius="10" />
+                </Border.Shadow>-->
+            </Border>
+
+            <Border
+                Grid.Column="3"
+                BackgroundColor="White"
+                HeightRequest="30"
+                StrokeShape="RoundRectangle 8"
+                StrokeThickness="0"
+                WidthRequest="30">
+                <Image
+                    HeightRequest="18"
+                    HorizontalOptions="Center"
+                    Source="trash.png"
+                    VerticalOptions="Center"
+                    WidthRequest="18" />
+                <!--<Border.Shadow>
+                    <Shadow Brush="Gray" Radius="10" />
+                </Border.Shadow>-->
+            </Border>
+
+        </Grid>
+
+        <ScrollView Grid.Row="1">
+            <Grid RowDefinitions="Auto, *" RowSpacing="10">
+                <Border
+                    Grid.Row="0"
+                    Padding="0,8"
+                    BackgroundColor="White"
+                    StrokeThickness="0">
+                    <Grid RowDefinitions="Auto, 250, Auto, Auto" RowSpacing="8">
+                        <Grid
+                            Padding="8,0"
+                            ColumnDefinitions="40, *, *"
+                            ColumnSpacing="5">
+                            <Border
+                                Grid.Column="0"
+                                BackgroundColor="LightBlue"
+                                HeightRequest="40"
+                                StrokeShape="RoundRectangle 20"
+                                WidthRequest="40">
+                                <Image
+                                    Aspect="AspectFit"
+                                    HeightRequest="30"
+                                    HorizontalOptions="Center"
+                                    Source="user"
+                                    VerticalOptions="Center"
+                                    WidthRequest="30" />
+                            </Border>
+                            <Grid
+                                Grid.Column="1"
+                                ColumnDefinitions="Auto, Auto, Auto"
+                                ColumnSpacing="5"
+                                VerticalOptions="Center">
+                                <Label
+                                    Grid.Column="0"
+                                    FontAttributes="Bold"
+                                    Text="Elijah Lekomo" />
+
+                                <Label
+                                    Grid.Column="1"
+                                    Margin="0,-7,0,0"
+                                    FontAttributes="Bold"
+                                    FontSize="14"
+                                    Text="."
+                                    VerticalOptions="Center" />
+
+                                <Label
+                                    Grid.Column="2"
+                                    FontSize="12"
+                                    Text="26 Mar 2025"
+                                    VerticalOptions="Center" />
+                            </Grid>
+                        </Grid>
+
+                        <Border
+                            Grid.Row="1"
+                            BackgroundColor="LightSalmon"
+                            HeightRequest="250"
+                            StrokeThickness="0">
+                            <Image
+                                Aspect="Center"
+                                HeightRequest="250"
+                                Source="africanculture" />
+                        </Border>
+
+                        <Label
+                            Grid.Row="2"
+                            Padding="8,0"
+                            FontSize="15"
+                            Text="Post Comment"
+                            TextColor="{StaticResource Gray900}" />
+
+                        <VerticalStackLayout Grid.Row="3" Spacing="10">
+                            <BoxView Style="{StaticResource fadedLine}" />
+                            <FlexLayout JustifyContent="SpaceAround">
+                                <HorizontalStackLayout Spacing="2">
+                                    <controls:PrimaryColorImage
+                                        HeightRequest="20"
+                                        Source="heartregular"
+                                        VerticalOptions="Center"
+                                        WidthRequest="20" />
+                                    <Label
+                                        FontSize="12"
+                                        Text="Like"
+                                        VerticalOptions="Center" />
+                                </HorizontalStackLayout>
+                                <HorizontalStackLayout Spacing="2">
+                                    <controls:PrimaryColorImage
+                                        HeightRequest="20"
+                                        Source="comment"
+                                        VerticalOptions="Center"
+                                        WidthRequest="20" />
+                                    <Label
+                                        FontSize="12"
+                                        Text="comment"
+                                        VerticalOptions="Center" />
+                                </HorizontalStackLayout>
+                                <HorizontalStackLayout Spacing="2">
+                                    <controls:PrimaryColorImage
+                                        HeightRequest="20"
+                                        Source="save"
+                                        VerticalOptions="Center"
+                                        WidthRequest="20" />
+                                    <Label
+                                        FontSize="12"
+                                        Text="save"
+                                        VerticalOptions="Center" />
+                                </HorizontalStackLayout>
+                                <HorizontalStackLayout Spacing="2">
+                                    <controls:PrimaryColorImage
+                                        HeightRequest="20"
+                                        Source="share"
+                                        VerticalOptions="Center"
+                                        WidthRequest="20" />
+                                    <Label
+                                        FontSize="12"
+                                        Text="share"
+                                        VerticalOptions="Center" />
+                                </HorizontalStackLayout>
+                            </FlexLayout>
+                        </VerticalStackLayout>
+
+                    </Grid>
+                </Border>
+
+                <VerticalStackLayout
+                    x:Name="comments"
+                    Grid.Row="1"
+                    Padding="15,0"
+                    Spacing="10">
+                    <Grid ColumnDefinitions="40, *" ColumnSpacing="5">
+                        <Border
+                            Grid.Column="0"
+                            BackgroundColor="LightBlue"
+                            HeightRequest="40"
+                            StrokeShape="RoundRectangle 20"
+                            VerticalOptions="Start"
+                            WidthRequest="40">
+                            <Image
+                                Aspect="AspectFit"
+                                HeightRequest="30"
+                                HorizontalOptions="Center"
+                                Source="user"
+                                VerticalOptions="Center"
+                                WidthRequest="30" />
+                        </Border>
+                        <Grid
+                            Grid.Column="1"
+                            Padding="5"
+                            BackgroundColor="White"
+                            RowDefinitions="Auto, Auto"
+                            RowSpacing="5">
+                            <Grid
+                                Grid.Row="0"
+                                ColumnDefinitions="Auto, Auto, Auto"
+                                ColumnSpacing="5"
+                                VerticalOptions="Center">
+                                <Label
+                                    Grid.Column="0"
+                                    FontAttributes="Bold"
+                                    Text="Elijah Lekomo" />
+
+                                <Label
+                                    Grid.Column="1"
+                                    Margin="0,-7,0,0"
+                                    FontAttributes="Bold"
+                                    FontSize="14"
+                                    Text="."
+                                    VerticalOptions="Center" />
+
+                                <Label
+                                    Grid.Column="2"
+                                    FontSize="12"
+                                    Text="26 Mar 2025"
+                                    VerticalOptions="Center" />
+                            </Grid>
+                            <Label
+                                Grid.Row="1"
+                                Text="Entered Comment goes here"
+                                TextColor="{StaticResource Gray900}" />
+                        </Grid>
+                    </Grid>
+
+                    <Grid ColumnDefinitions="40, *" ColumnSpacing="5">
+                        <Border
+                            Grid.Column="0"
+                            BackgroundColor="LightBlue"
+                            HeightRequest="40"
+                            StrokeShape="RoundRectangle 20"
+                            VerticalOptions="Start"
+                            WidthRequest="40">
+                            <Image
+                                Aspect="AspectFit"
+                                HeightRequest="30"
+                                HorizontalOptions="Center"
+                                Source="user"
+                                VerticalOptions="Center"
+                                WidthRequest="30" />
+                        </Border>
+                        <Grid
+                            Grid.Column="1"
+                            Padding="5"
+                            BackgroundColor="White"
+                            RowDefinitions="Auto, Auto"
+                            RowSpacing="5">
+                            <Grid
+                                Grid.Row="0"
+                                ColumnDefinitions="Auto, Auto, Auto"
+                                ColumnSpacing="5"
+                                VerticalOptions="Center">
+                                <Label
+                                    Grid.Column="0"
+                                    FontAttributes="Bold"
+                                    Text="Elijah Lekomo" />
+
+                                <Label
+                                    Grid.Column="1"
+                                    Margin="0,-7,0,0"
+                                    FontAttributes="Bold"
+                                    FontSize="14"
+                                    Text="."
+                                    VerticalOptions="Center" />
+
+                                <Label
+                                    Grid.Column="2"
+                                    FontSize="12"
+                                    Text="26 Mar 2025"
+                                    VerticalOptions="Center" />
+                            </Grid>
+                            <Label
+                                Grid.Row="1"
+                                Text="Entered Comment goes here"
+                                TextColor="{StaticResource Gray900}" />
+                        </Grid>
+                    </Grid>
+
+                    <Grid ColumnDefinitions="40, *" ColumnSpacing="5">
+                        <Border
+                            Grid.Column="0"
+                            BackgroundColor="LightBlue"
+                            HeightRequest="40"
+                            StrokeShape="RoundRectangle 20"
+                            VerticalOptions="Start"
+                            WidthRequest="40">
+                            <Image
+                                Aspect="AspectFit"
+                                HeightRequest="30"
+                                HorizontalOptions="Center"
+                                Source="user"
+                                VerticalOptions="Center"
+                                WidthRequest="30" />
+                        </Border>
+                        <Grid
+                            Grid.Column="1"
+                            Padding="5"
+                            BackgroundColor="White"
+                            RowDefinitions="Auto, Auto"
+                            RowSpacing="5">
+                            <Grid
+                                Grid.Row="0"
+                                ColumnDefinitions="Auto, Auto, Auto"
+                                ColumnSpacing="5"
+                                VerticalOptions="Center">
+                                <Label
+                                    Grid.Column="0"
+                                    FontAttributes="Bold"
+                                    Text="Elijah Lekomo" />
+
+                                <Label
+                                    Grid.Column="1"
+                                    Margin="0,-7,0,0"
+                                    FontAttributes="Bold"
+                                    FontSize="14"
+                                    Text="."
+                                    VerticalOptions="Center" />
+
+                                <Label
+                                    Grid.Column="2"
+                                    FontSize="12"
+                                    Text="26 Mar 2025"
+                                    VerticalOptions="Center" />
+                            </Grid>
+                            <Label
+                                Grid.Row="1"
+                                Text="Entered Comment goes here. Entered Comment goes here.                                 Entered Comment goes here.Entered Comment goes here"
+                                TextColor="{StaticResource Gray900}" />
+                        </Grid>
+                    </Grid>
+
+                    <Grid ColumnDefinitions="40, *" ColumnSpacing="5">
+                        <Border
+                            Grid.Column="0"
+                            BackgroundColor="LightBlue"
+                            HeightRequest="40"
+                            StrokeShape="RoundRectangle 20"
+                            VerticalOptions="Start"
+                            WidthRequest="40">
+                            <Image
+                                Aspect="AspectFit"
+                                HeightRequest="30"
+                                HorizontalOptions="Center"
+                                Source="user"
+                                VerticalOptions="Center"
+                                WidthRequest="30" />
+                        </Border>
+                        <Grid
+                            Grid.Column="1"
+                            Padding="5"
+                            BackgroundColor="White"
+                            RowDefinitions="Auto, Auto"
+                            RowSpacing="5">
+                            <Grid
+                                Grid.Row="0"
+                                ColumnDefinitions="Auto, Auto, Auto"
+                                ColumnSpacing="5"
+                                VerticalOptions="Center">
+                                <Label
+                                    Grid.Column="0"
+                                    FontAttributes="Bold"
+                                    Text="Elijah Lekomo" />
+
+                                <Label
+                                    Grid.Column="1"
+                                    Margin="0,-7,0,0"
+                                    FontAttributes="Bold"
+                                    FontSize="14"
+                                    Text="."
+                                    VerticalOptions="Center" />
+
+                                <Label
+                                    Grid.Column="2"
+                                    FontSize="12"
+                                    Text="26 Mar 2025"
+                                    VerticalOptions="Center" />
+                            </Grid>
+                            <Label
+                                Grid.Row="1"
+                                Text="Entered Comment goes here. Entered Comment goes here.                                  Entered Comment goes here.Entered Comment goes here"
+                                TextColor="{StaticResource Gray900}" />
+                        </Grid>
+                    </Grid>
+
+                    <Grid ColumnDefinitions="40, *" ColumnSpacing="5">
+                        <Border
+                            Grid.Column="0"
+                            BackgroundColor="LightBlue"
+                            HeightRequest="40"
+                            StrokeShape="RoundRectangle 20"
+                            VerticalOptions="Start"
+                            WidthRequest="40">
+                            <Image
+                                Aspect="AspectFit"
+                                HeightRequest="30"
+                                HorizontalOptions="Center"
+                                Source="user"
+                                VerticalOptions="Center"
+                                WidthRequest="30" />
+                        </Border>
+                        <Grid
+                            Grid.Column="1"
+                            Padding="5"
+                            BackgroundColor="White"
+                            RowDefinitions="Auto, Auto"
+                            RowSpacing="5">
+                            <Grid
+                                Grid.Row="0"
+                                ColumnDefinitions="Auto, Auto, Auto"
+                                ColumnSpacing="5"
+                                VerticalOptions="Center">
+                                <Label
+                                    Grid.Column="0"
+                                    FontAttributes="Bold"
+                                    Text="Elijah Lekomo" />
+
+                                <Label
+                                    Grid.Column="1"
+                                    Margin="0,-7,0,0"
+                                    FontAttributes="Bold"
+                                    FontSize="14"
+                                    Text="."
+                                    VerticalOptions="Center" />
+
+                                <Label
+                                    Grid.Column="2"
+                                    FontSize="12"
+                                    Text="26 Mar 2025"
+                                    VerticalOptions="Center" />
+                            </Grid>
+                            <Label
+                                Grid.Row="1"
+                                Text="Entered Comment goes here. Entered Comment goes here.                        Entered Comment goes here.Entered Comment goes here"
+                                TextColor="{StaticResource Gray900}" />
+                        </Grid>
+                    </Grid>
+                </VerticalStackLayout>
+            </Grid>
+
+
+        </ScrollView>
+        <Grid
+            Grid.Row="2"
+            Padding="15,10,15,15"
+            BackgroundColor="White"
+            ColumnDefinitions="*,Auto"
+            ColumnSpacing="5">
+            <controls:NoBorderEntry Grid.Column="0" Placeholder="Enter Comment..." />
+            <Border
+                Grid.Column="1"
+                BackgroundColor="{StaticResource Primary}"
+                HeightRequest="44"
+                StrokeShape="RoundRectangle 8"
+                WidthRequest="44">
+
+                <controls:WhiteImage
+                    HeightRequest="24"
+                    Source="send"
+                    WidthRequest="24" />
+            </Border>
+
+        </Grid>
+    </Grid>
+</ContentPage>

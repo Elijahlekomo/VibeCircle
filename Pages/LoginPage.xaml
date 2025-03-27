@@ -4,7 +4,8 @@
              xmlns:controls="clr-namespace:VibeCircle.Controls"
              x:Class="VibeCircle.Pages.LoginPage"
              Title="Login"
-             Padding="20">
+             Padding="20"
+             Shell.TabBarTitleColor="White">
     <ScrollView>
         <Grid RowDefinitions="Auto, Auto, Auto"
               RowSpacing="20"

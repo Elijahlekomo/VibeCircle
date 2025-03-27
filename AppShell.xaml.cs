@@ -14,6 +14,7 @@ namespace VibeCircle
         private static void RegisterRoutes()
         {
             Routing.RegisterRoute(nameof(RegisterPage), typeof(RegisterPage));
+            Routing.RegisterRoute(nameof(PostDetailsPage), typeof(PostDetailsPage));
         }
     }
 }
