@@ -3,11 +3,84 @@
     x:Class="VibeCircle.Pages.AddPostPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="AddPostPage">
-    <VerticalStackLayout>
-        <Label
-            HorizontalOptions="Center"
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" />
-    </VerticalStackLayout>
+    xmlns:controls="clr-namespace:VibeCircle.Controls"
+    Title="Create Post"
+    Padding="15">
+    <ScrollView>
+        <Grid RowDefinitions="Auto, *, Auto, Auto" RowSpacing="5">
+            <Grid
+                Padding="8,0"
+                ColumnDefinitions="40, *, *"
+                ColumnSpacing="5">
+                <Border
+                    Grid.Column="0"
+                    BackgroundColor="LightBlue"
+                    HeightRequest="40"
+                    StrokeShape="RoundRectangle 20"
+                    WidthRequest="40">
+                    <Image
+                        Aspect="AspectFit"
+                        HeightRequest="30"
+                        HorizontalOptions="Center"
+                        Source="user"
+                        VerticalOptions="Center"
+                        WidthRequest="30" />
+                </Border>
+                <Label
+                    Grid.Column="1"
+                    VerticalOptions="Center"
+                    FontAttributes="Bold"
+                    Text="Elijah Lekomo" />
+            </Grid>
+            <controls:NoBorderEditor
+                Grid.Row="1"
+                BackgroundColor="LightBlue"
+                Placeholder="Enter Text" />
+
+            <Grid Grid.Row="2">
+                <Border BackgroundColor="LightBlue"
+                        HeightRequest="250"
+                        StrokeThickness="0">
+                    <Image HeightRequest="250" Source="Music"/>
+                </Border>
+                <Border Margin="2"
+                        BackgroundColor="{StaticResource Primary}"
+                        HeightRequest="40"
+                        HorizontalOptions="End"
+                        StrokeShape="RoundRectangle 5"
+                        VerticalOptions="Start"
+                        StrokeThickness="0"
+                        WidthRequest="40">
+                    <controls:WhiteImage 
+                        HeightRequest="18"
+                        Source="trash"
+                        WidthRequest="18"/>
+                    <Border.Shadow>
+                        <Shadow/>
+                    </Border.Shadow>
+                </Border>
+            </Grid>
+            <FlexLayout Grid.Row="3" 
+                        JustifyContent="SpaceBetween"
+                        Padding="0,0,2,0">
+                <Border
+                    Padding="15,5"
+                    Stroke="{StaticResource Primary}"
+                    StrokeShape="RoundRectangle 5">
+                    <HorizontalStackLayout Spacing="5">
+                        <controls:PrimaryColorImage
+                            HeightRequest="25"
+                            Source="photo"
+                            VerticalOptions="Center"
+                            WidthRequest="25" />
+                        <Label Text="Add Photo" VerticalOptions="Center" />
+                    </HorizontalStackLayout>
+                </Border>
+                <Button
+                    Padding="50,0"
+                    Style="{StaticResource rounded}"
+                    Text="Post" />
+            </FlexLayout>
+        </Grid>
+    </ScrollView>
 </ContentPage>
