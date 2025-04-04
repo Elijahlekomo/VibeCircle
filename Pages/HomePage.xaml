@@ -52,7 +52,11 @@
                     Grid.Column="2"
                     HeightRequest="{StaticResource WhiteImageSize}"
                     Source="user"
-                    WidthRequest="{StaticResource WhiteImageSize}" />
+                    WidthRequest="{StaticResource WhiteImageSize}" >
+                    <controls:WhiteImage.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="GoToProfilePage_Tapped"/>
+                    </controls:WhiteImage.GestureRecognizers>
+                </controls:WhiteImage>
             </Grid>
         </Grid>
     </Shell.TitleView>

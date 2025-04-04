@@ -10,17 +10,17 @@
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
                 <ResourceDictionary>
-                    
+
                     <Style x:Key="rounded" TargetType="Button">
                         <Setter Property="CornerRadius" Value="20"/>
                     </Style>
-                    
+
                     <Style x:Key="formlabel" TargetType="Label">
                         <Setter Property="FontAttributes" Value="Bold"/>
                     </Style>
-                    
+
                     <Style x:Key="fadedLine" TargetType="BoxView">
-                        <Setter Property="HeightRequest" Value="0.5"/>
+                        <Setter Property="HeightRequest" Value="1"/>
                         <Setter Property="BackgroundColor" Value="{StaticResource Primary}"/>
                         <Setter Property="Opacity" Value="0.2"/>
                     </Style>
@@ -28,7 +28,7 @@
                     <Style TargetType="controls:NoBorderEntry">
                         <Setter Property="BackgroundColor" Value="LightBlue"/>
                     </Style>
-                    
+
                 </ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

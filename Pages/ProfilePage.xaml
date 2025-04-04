@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="VibeCircle.Pages.ProfilePage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:VibeCircle.Controls"
+    Title="My Profile">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="power" />
+    </ContentPage.ToolbarItems>
+
+    <Grid RowDefinitions="Auto, *">
+        <VerticalStackLayout Grid.Row="0" Padding="15" Spacing="5">
+            <Grid>
+                <Border
+                    BackgroundColor="White"
+                    HeightRequest="70"
+                    StrokeShape="RoundRectangle 35"
+                    WidthRequest="70">
+                    <Image
+                        HorizontalOptions="Center"
+                        Source="user"
+                        VerticalOptions="Center" />
+                </Border>
+                <Border
+                    Margin="0,0,-50,0"
+                    BackgroundColor="{StaticResource Primary}"
+                    HeightRequest="24"
+                    StrokeShape="RoundRectagle 12"
+                    VerticalOptions="End"
+                    WidthRequest="24" 
+                    StrokeThickness="0">
+                    <controls:WhiteImage
+                        HeightRequest="12"
+                        HorizontalOptions="Center"
+                        Source="pencil"
+                        VerticalOptions="Center"
+                        WidthRequest="12"/>
+                    <Border.Shadow>
+                        <Shadow/>
+                    </Border.Shadow>
+                </Border>
+            </Grid>
+            <Label FontAttributes="Bold"
+                   FontSize="18"
+                   HorizontalOptions="Center"
+                   Text="Abbay Prince"
+                   Margin="0,10,0,0 "/>
+            <Label
+                   FontSize="16"
+                   HorizontalOptions="Center"
+                   Text="email@email.com"/>
+            <BoxView Style="{StaticResource fadedLine}"/>
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>
