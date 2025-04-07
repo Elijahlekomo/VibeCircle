@@ -47,14 +47,17 @@
                         HorizontalOptions="End"
                         VerticalOptions="Start"
                         WidthRequest="10" />
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="GoToNotifiicationPage_Tapped" />
+                    </Grid.GestureRecognizers>
                 </Grid>
                 <controls:WhiteImage
                     Grid.Column="2"
                     HeightRequest="{StaticResource WhiteImageSize}"
                     Source="user"
-                    WidthRequest="{StaticResource WhiteImageSize}" >
+                    WidthRequest="{StaticResource WhiteImageSize}">
                     <controls:WhiteImage.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="GoToProfilePage_Tapped"/>
+                        <TapGestureRecognizer Tapped="GoToProfilePage_Tapped" />
                     </controls:WhiteImage.GestureRecognizers>
                 </controls:WhiteImage>
             </Grid>

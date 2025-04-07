@@ -18,6 +18,10 @@ public partial class HomePage : ContentPage
     }
     private async void GoToProfilePage_Tapped(object sender, TappedEventArgs e)
     {
-        await Shell.Current.GoToAsync(nameof(AddPostPage), animate: true);
+        await Shell.Current.GoToAsync(nameof(ProfilePage), animate: true);
+    }
+    private async void GoToNotifiicationPage_Tapped(object sender, TappedEventArgs e)
+    {
+        await Shell.Current.GoToAsync(nameof(NotificationPage), animate: true);
     }
 }
