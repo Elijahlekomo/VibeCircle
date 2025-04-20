@@ -3,9 +3,10 @@ This is a cross platform social media app
 
 Built project with:
 - C#
-- ASP.NET Core
-- .Net Maui
 - Xaml
+- ASP.NET Core Web API
+- .Net Maui
+- SQL
    
 ## Screenshot of the project     
 __Dashboard Page__    
