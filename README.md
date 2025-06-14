@@ -1,5 +1,5 @@
 ## __About the project__  
-This is a cross platform social media mobile app o connect with family and friends.
+This is a cross platform social media mobile app of connect with family and friends.
 
 Built project with:
 - C#
