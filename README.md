@@ -7,6 +7,7 @@ Built project with:
 - ASP.NET Core Web API
 - .Net Maui
 - SQL
-   
+- Signal R
+     
 ## Screenshot of the project     
 __Dashboard Page__    
